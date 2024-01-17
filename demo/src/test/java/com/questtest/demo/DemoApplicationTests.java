@@ -64,8 +64,8 @@ class DemoApplicationTests {
 
   Optional<Fireman> veteran = firemanRepository.getVeteran();
 
- // assertTrue(veteran.isPresent());
-  //assertEquals("John", veteran.get().getName());
+  assertTrue(veteran.isPresent());
+  assertEquals("John", veteran.get().getName());
 
   }
 

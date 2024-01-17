@@ -18,6 +18,10 @@ public class Fireman {
   @OneToMany(mappedBy = "fireman")
   private List<Fire> fires;
 
+  public Fireman(String name, List<Fire> fires) {
+    this.name = name;
+    this.fires = fires;
+  }
   public Fireman() {
   }
 
@@ -45,9 +49,6 @@ public class Fireman {
     this.fires = fires;
   }
 
-  public Fireman(String name, List<Fire> fires) {
-    this.name = name;
-    this.fires = fires;
-  }
+
 
 }
