@@ -45,4 +45,9 @@ public class Fireman {
     this.fires = fires;
   }
 
+  public Fireman(String name, List<Fire> fires) {
+    this.name = name;
+    this.fires = fires;
+  }
+
 }
