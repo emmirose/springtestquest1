@@ -15,7 +15,8 @@ public class Fireman {
    private Long id;
 
   private String name;
-  @OneToMany(mappedBy = "fireman")
+
+  @OneToMany
   private List<Fire> fires;
 
   public Fireman(String name, List<Fire> fires) {

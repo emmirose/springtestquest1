@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -16,7 +17,9 @@ public class Fire {
 
   private int severity;
   private Instant date;
+
   @ManyToOne
+  @JoinColumn(name = "fireman_id")
   private Fireman fireman;
 
   public Fire() {

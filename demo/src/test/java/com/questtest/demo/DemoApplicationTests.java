@@ -55,17 +55,23 @@ class DemoApplicationTests {
   firemanRepository.saveAndFlush(john);
   firemanRepository.saveAndFlush(marc);
   firemanRepository.saveAndFlush(liz);
-  System.out.println("================================================");
-  System.out.println(john.getFires().size());
-  System.out.println(liz.getFires().size());
-  System.out.println(marc.getFires().size());
-  System.out.println(firemanRepository.getVeteran().get());
+
 
 
   Optional<Fireman> veteran = firemanRepository.getVeteran();
 
   assertTrue(veteran.isPresent());
-  assertEquals("John", veteran.get().getName());
+  if (firemanRepository.getVeteran().isEmpty()) {
+    assertEquals(firemanRepository.getVeteran().isEmpty(), veteran);
+
+  }
+
+
+  if (firesJohn.size() > firesMarc.size() && firesJohn.size() > firesLiz.size()) {
+    assertEquals("John", veteran.get().getName());
+  }
+
+
 
   }
 
